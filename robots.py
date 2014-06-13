@@ -65,7 +65,7 @@ class InspectorBot(Robot):
         if len(melon.stickers) < 2:
             self.display_status(DANGER + "%s is not labeled correctly!  REJECTED!!" % melon)
             return False
-
+#********************************************************
         # All melons should be green!
         if melon.color != 'Green':
             self.display_status(DANGER + "%s is not Green!  All melons must be Green!  REJECTED!!" % melon)
@@ -73,7 +73,7 @@ class InspectorBot(Robot):
         
         self.display_status(OK + "%s Passes" % melon)
         return True
-    
+#*********************************************************
 
 class PackerBot(Robot):
     robot_name = 'PackerBot'
@@ -109,14 +109,14 @@ class TrashBot(Robot):
     def trash(self, melon):
         self.display_status("Sending %s to the compost" % melon)
 
-
+#******************************************************
 class PainterBot(Robot):
     robot_name = 'PainterBot'
     
     def paint(self, melon):
         self.display_status("Painting %s Green" % melon)
         melon.color = 'Green'
-    
+#******************************************************
 
 
 class Box(object):

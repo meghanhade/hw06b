@@ -22,7 +22,7 @@ class Melon(object):
     
 
 def main():
-    f = open("standing_orders1.log")
+    f = open("standing_orders2.log")
 
     for line in f:
         (melon_type, quantity) = line.rstrip().split(':')
@@ -41,6 +41,9 @@ def main():
             count += 1
             
             m.prep()
+
+            if melon_type == "Winter Squash":
+                robots.painterbot.paint(m)
             
             # evaluate melon
             presentable = robots.inspectorbot.evaluate(m)
